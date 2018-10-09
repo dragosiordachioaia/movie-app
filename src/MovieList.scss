@@ -1,0 +1,22 @@
+@import "variables";
+
+.movie-list-container {
+  background-color: #232b31;
+  padding: 4em 2em;
+  height: 100vh;
+  overflow: auto;
+  width: 100%;
+  width: calc(100% - #{$sidebar-width});
+
+  .title {
+    color: #fff;
+    margin-top: 0;
+    font-weight: 100;
+  }
+
+  .movie-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

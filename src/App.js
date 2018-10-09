@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./App.scss";
 
 import axios from "axios";
 import { ENDPOINTS, REQUEST_PARAMS } from "./constants";
@@ -44,15 +44,15 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
+      <div className="app">
         <Header />
-        <div className="row">
-          <div className="col-xs-3">
-            <Sidebar genres={this.state.genres} />
-          </div>
-          <div className="col-xs-9">
-            <MovieList movies={this.state.movies} config={this.state.config} />
-          </div>
+        <div className="main-content">
+          <Sidebar genres={this.state.genres} />
+          <MovieList
+            movies={this.state.movies}
+            config={this.state.config}
+            genres={this.state.genres}
+          />
         </div>
       </div>
     );

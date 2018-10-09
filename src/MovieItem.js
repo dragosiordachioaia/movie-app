@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./MovieItem.css";
+import "./MovieItem.scss";
 
 import { getImagePath } from "./utils";
 
@@ -8,18 +8,29 @@ export default class MovieItem extends Component {
   constructor(props) {
     super(props);
 
-    // this.displayStuff = this.displayStuff.bind(this);
+    this.displayGenres = this.displayGenres.bind(this);
   }
 
-  displayStuff() {}
+  displayGenres() {
+    return this.props.genres
+      .filter(genreData => {
+        return this.props.data.genre_ids.includes(genreData.id);
+      })
+      .map(genreData => genreData.name)
+      .join(", ");
+  }
 
   render() {
     return (
       <div className="movie-item">
-        {/* <p>{this.props.data.title}</p> */}
+        <span className="rating">{this.props.data.vote_average}</span>
         <img
           src={getImagePath(this.props.data.poster_path, this.props.config)}
         />
+        <div className="info">
+          <p className="title">{this.props.data.title}</p>
+          <p className="genres">{this.displayGenres()}</p>
+        </div>
       </div>
     );
   }

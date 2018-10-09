@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import "./MovieList.scss";
+
 import MovieItem from "./MovieItem";
 
 export default class MovieList extends Component {
@@ -12,15 +14,23 @@ export default class MovieList extends Component {
   displayList() {
     return this.props.movies.map(movieData => {
       return (
-        <div className="col-sm-3 col-xs-6" key={movieData.id}>
-          <MovieItem data={movieData} config={this.props.config} />
-        </div>
+        <MovieItem
+          key={movieData.id}
+          data={movieData}
+          config={this.props.config}
+          genres={this.props.genres}
+        />
       );
     });
   }
 
   render() {
     console.log("movies are:", this.props.movies);
-    return <div> {this.displayList()} </div>;
+    return (
+      <div className="movie-list-container">
+        <h1 className="title">Films showing right now</h1>
+        <div className="movie-list">{this.displayList()}</div>
+      </div>
+    );
   }
 }

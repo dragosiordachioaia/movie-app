@@ -1,0 +1,27 @@
+@import "./variables";
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $color-primary;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .main-content {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+  }
+}

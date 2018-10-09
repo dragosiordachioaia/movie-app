@@ -1,0 +1,16 @@
+@import "variables";
+
+.header {
+  background-color: $color-secondary;
+  color: #fff;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+
+  .logo-container {
+    padding-left: 50px;
+    box-sizing: border-box;
+    width: $sidebar-width;
+    background-color: $color-secondary-alt;
+  }
+}
