@@ -74,6 +74,7 @@ class App extends Component {
             movies={this.state.movies}
             config={this.state.config}
             genres={this.state.genres}
+            minRating={this.state.minRating}
           />
         </div>
       </div>

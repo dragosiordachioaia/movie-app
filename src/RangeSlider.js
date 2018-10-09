@@ -59,7 +59,9 @@ export default class RangeSlider extends Component {
     }
   }
 
-  onTouchMove(e) {}
+  onTouchMove(e) {
+    // TODO: implement touch events
+  }
 
   render() {
     let cursorPosition =
