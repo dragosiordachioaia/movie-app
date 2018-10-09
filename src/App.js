@@ -4,6 +4,10 @@ import "./App.css";
 import axios from "axios";
 import { ENDPOINTS, REQUEST_PARAMS } from "./constants";
 
+import Header from "./Header";
+import Sidebar from "./Sidebar";
+import MovieList from "./MovieList";
+
 axios.defaults.params = REQUEST_PARAMS;
 
 class App extends Component {
@@ -16,7 +20,6 @@ class App extends Component {
     };
 
     this.fetchData = this.fetchData.bind(this);
-    this.getImagePath = this.getImagePath.bind(this);
   }
 
   componentDidMount() {
@@ -35,26 +38,22 @@ class App extends Component {
     });
   }
 
-  getImagePath(imageID) {
-    if (!this.state.config) {
-      return null;
-    }
-
-    return `${this.state.config.base_url}${
-      this.state.config.poster_sizes[4]
-    }${imageID}`;
-  }
-
   render() {
     if (!this.state.config || !this.state.movies || !this.state.genres) {
       return <p>Loading...</p>;
     }
-    let posterPath = this.state.movies[0].poster_path;
-    let fullPosterPath = this.getImagePath(posterPath);
 
     return (
       <div className="App">
-        <img src={fullPosterPath} />
+        <Header />
+        <div className="row">
+          <div className="col-xs-3">
+            <Sidebar genres={this.state.genres} />
+          </div>
+          <div className="col-xs-9">
+            <MovieList movies={this.state.movies} config={this.state.config} />
+          </div>
+        </div>
       </div>
     );
   }
