@@ -75,7 +75,14 @@ export default class RangeSlider extends Component {
           onMouseDown={e => this.setState({ mouseDown: true })}
           onTouchStart={e => this.setState({ touchStart: true })}
         />
+        <div className="tooltip" style={{ left: `${cursorPosition}%` }}>
+          {this.props.value}
+        </div>
         <div className="axis" ref={this.axisRef} />
+        <div
+          className="axis-highlight"
+          style={{ width: `${cursorPosition}%` }}
+        />
         <label className="min">{this.props.min}</label>
         <label className="max">{this.props.max}</label>
       </div>

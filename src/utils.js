@@ -8,5 +8,9 @@ export function getImagePath(imageID, config) {
 
 export function roundToStep(amount, step) {
   step = 1 / step;
-  return (Math.round(amount * step) / step).toFixed(2);
+  let returnValue = Math.round(amount * step) / step;
+  if (Math.floor(returnValue) === returnValue) {
+    return Math.floor(returnValue);
+  }
+  return returnValue.toFixed(1);
 }
