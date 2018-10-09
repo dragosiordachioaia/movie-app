@@ -1,0 +1,34 @@
+@import "variables";
+
+.range-slider {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+
+  .axis {
+    width: 100%;
+    height: 2px;
+    background-color: $color-primary;
+    margin-bottom: 10px;
+  }
+
+  .cursor {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 0;
+    top: 0;
+    width: 0.8em;
+    height: 0.8em;
+    background-color: $color-secondary-alt;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  .min {
+    float: left;
+  }
+
+  .max {
+    float: right;
+  }
+}

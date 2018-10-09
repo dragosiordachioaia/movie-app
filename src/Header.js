@@ -5,12 +5,6 @@ import "./Header.scss";
 import SearchBar from "./SearchBar";
 
 export default class Header extends Component {
-  constructor(props) {
-    super(props);
-
-    // this.displayStuff = this.displayStuff.bind(this);
-  }
-
   displayStuff() {}
 
   render() {

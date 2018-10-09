@@ -26,6 +26,7 @@ export default class MovieItem extends Component {
         <span className="rating">{this.props.data.vote_average}</span>
         <img
           src={getImagePath(this.props.data.poster_path, this.props.config)}
+          alt={`poster-${this.props.data.title}`}
         />
         <div className="info">
           <p className="title">{this.props.data.title}</p>

@@ -25,7 +25,6 @@ export default class MovieList extends Component {
   }
 
   render() {
-    console.log("movies are:", this.props.movies);
     return (
       <div className="movie-list-container">
         <h1 className="title">Films showing right now</h1>

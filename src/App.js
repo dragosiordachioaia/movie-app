@@ -17,6 +17,7 @@ class App extends Component {
       genres: null,
       movies: null,
       config: null,
+      minRating: 3,
     };
 
     this.fetchData = this.fetchData.bind(this);
@@ -64,6 +65,10 @@ class App extends Component {
           <Sidebar
             genres={this.state.genres}
             onGenreCheck={this.onGenreCheck}
+            minRating={this.state.minRating}
+            onMinRatingChange={newMinRating => {
+              this.setState({ minRating: newMinRating });
+            }}
           />
           <MovieList
             movies={this.state.movies}

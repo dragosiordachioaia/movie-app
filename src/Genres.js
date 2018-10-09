@@ -24,6 +24,11 @@ export default class Genres extends Component {
   }
 
   render() {
-    return <ul className="genres-filter">{this.displayGenres()}</ul>;
+    return (
+      <div>
+        <p>Genres:</p>
+        <ul className="genres-filter">{this.displayGenres()}</ul>
+      </div>
+    );
   }
 }
