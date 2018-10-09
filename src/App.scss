@@ -21,7 +21,7 @@ body {
 
   .main-content {
     display: flex;
-    height: 100vh;
+    height: calc(100vh - #{$header-height});
     flex-direction: row;
   }
 }

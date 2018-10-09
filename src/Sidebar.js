@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import "./Sidebar.scss";
 
+import Genres from "./Genres";
+
 export default class Sidebar extends Component {
   constructor(props) {
     super(props);
@@ -15,8 +17,10 @@ export default class Sidebar extends Component {
     return (
       <div className="sidebar">
         <p>stufff</p>
-        <p>stufff</p>
-        <p>stufff</p>
+        <Genres
+          genres={this.props.genres}
+          onGenreCheck={this.props.onGenreCheck}
+        />
       </div>
     );
   }

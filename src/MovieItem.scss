@@ -2,6 +2,7 @@
 
 .movie-item {
   padding: 1em;
+  padding-top: 0;
   position: relative;
   width: calc(100% / 4);
   box-sizing: border-box;
@@ -42,5 +43,6 @@
     border-radius: 50px;
     width: 3em;
     text-align: center;
+    padding: 4px;
   }
 }

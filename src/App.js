@@ -20,6 +20,7 @@ class App extends Component {
     };
 
     this.fetchData = this.fetchData.bind(this);
+    this.onGenreCheck = this.onGenreCheck.bind(this);
   }
 
   componentDidMount() {
@@ -38,6 +39,19 @@ class App extends Component {
     });
   }
 
+  onGenreCheck(data) {
+    console.log("onGenreCheck() data = ", data);
+
+    let newGenres = JSON.parse(JSON.stringify(this.state.genres));
+    newGenres.forEach(genreData => {
+      if (genreData.id === data.id) {
+        console.log("found:", genreData);
+        genreData.checked = !genreData.checked;
+      }
+    });
+    this.setState({ genres: newGenres });
+  }
+
   render() {
     if (!this.state.config || !this.state.movies || !this.state.genres) {
       return <p>Loading...</p>;
@@ -47,7 +61,10 @@ class App extends Component {
       <div className="app">
         <Header />
         <div className="main-content">
-          <Sidebar genres={this.state.genres} />
+          <Sidebar
+            genres={this.state.genres}
+            onGenreCheck={this.onGenreCheck}
+          />
           <MovieList
             movies={this.state.movies}
             config={this.state.config}
