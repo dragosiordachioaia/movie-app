@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="rating-filter"
+>
+  <p
+    className="label"
+  />
+  <RangeSlider
+    max={10}
+    min={0}
+    step={0.5}
+  />
+</div>
+`;

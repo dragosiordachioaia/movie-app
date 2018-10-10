@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when expanded 1`] = `
+<div
+  className="side-bar"
+>
+  <div
+    className="inner-container"
+  >
+    <RatingFilter />
+    <Genres />
+  </div>
+  <button
+    className="expand"
+  >
+    <i
+      className="fa fa-chevron-up"
+    />
+  </button>
+</div>
+`;
+
+exports[`renders correctly when not expanded 1`] = `
+<div
+  className="side-bar"
+>
+  <div
+    className="inner-container"
+  >
+    <RatingFilter />
+    <Genres />
+  </div>
+  <button
+    className="expand"
+  >
+    <i
+      className="fa fa-chevron-down"
+    />
+  </button>
+</div>
+`;
