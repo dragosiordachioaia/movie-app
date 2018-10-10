@@ -6,7 +6,9 @@ exports[`renders correctly 1`] = `
 >
   <p
     className="label"
-  />
+  >
+    Minimum rating
+  </p>
   <RangeSlider
     max={10}
     min={0}

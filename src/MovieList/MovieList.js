@@ -10,6 +10,9 @@ export default class MovieList extends Component {
 
     this.displayMovies = this.displayMovies.bind(this);
     this.getFilteredList = this.getFilteredList.bind(this);
+    this.checkRating = this.checkRating.bind(this);
+    this.checkGenre = this.checkGenre.bind(this);
+    this.checkName = this.checkName.bind(this);
   }
 
   displayMovies(list) {
@@ -25,28 +28,55 @@ export default class MovieList extends Component {
     });
   }
 
+  /**
+    This function takes care of applying all the filters: genre, rating, name.
+    I believe the best place to put this is here, instead of filtering the data
+    in the App component, because this is the only place where we actually need it.
+    (There might be good arguments against that logic, though)
+  **/
   getFilteredList() {
     return this.props.movies.filter(movieData => {
-      let ratingIsOk = movieData.vote_average >= this.props.minRating;
-      let genreIsOk = true;
-      let nameIsOk = true;
-      let selectedGenres = this.props.genres.filter(
-        genreData => genreData.checked
-      );
-      if (this.props.nameFilter.length > 0) {
-        nameIsOk = movieData.title
-          .toLowerCase()
-          .includes(this.props.nameFilter.toLowerCase());
-      }
-      if (selectedGenres.length > 0) {
-        selectedGenres.forEach(({ id }) => {
-          if (!movieData.genre_ids.includes(id)) {
-            genreIsOk = false;
-          }
-        });
-      }
+      let ratingIsOk = this.checkRating(movieData);
+      let genreIsOk = this.checkGenre(movieData);
+      let nameIsOk = this.checkName(movieData);
+
       return genreIsOk && ratingIsOk && nameIsOk;
     });
+  }
+
+  checkRating(movieData) {
+    return movieData.vote_average >= this.props.minRating;
+  }
+
+  checkGenre(movieData) {
+    let genreIsOk = true;
+    let selectedGenres = this.props.genres.filter(
+      genreData => genreData.checked
+    );
+
+    // if we have no checked genres, we assume the user wants to see all
+    // movies listed
+    if (selectedGenres.length > 0) {
+      selectedGenres.forEach(({ id }) => {
+        if (!movieData.genre_ids.includes(id)) {
+          genreIsOk = false;
+        }
+      });
+    }
+    return genreIsOk;
+  }
+
+  checkName(movieData) {
+    let nameIsOk = true;
+
+    // if we have no name filter applied, we assume the user wants to see all
+    // movies applied
+    if (this.props.nameFilter.length > 0) {
+      nameIsOk = movieData.title
+        .toLowerCase()
+        .includes(this.props.nameFilter.toLowerCase());
+    }
+    return nameIsOk;
   }
 
   render() {

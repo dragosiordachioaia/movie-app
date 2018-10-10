@@ -15,6 +15,8 @@ export default class MovieItem extends Component {
   }
 
   displayGenres() {
+    // we only want to render genres that actually exist in the list coming from
+    // the API, because we those are the only ones we have names for
     return this.props.genres
       .filter(genreData => {
         return (
@@ -26,6 +28,12 @@ export default class MovieItem extends Component {
       .join(", ");
   }
 
+  /**
+    We need a placeholder in order to avoid visual glitches while the images load.
+    The effect looks best if the placeholder image has the same aspect ratio as
+    the real image. I've opted to use an svg for this, but it could have been
+    anything else.
+  **/
   displayPlaceholder() {
     if (this.state.imageLoaded) {
       return null;
@@ -52,6 +60,11 @@ export default class MovieItem extends Component {
     );
   }
 
+  /**
+    To display the image & placeholder as cleanly as possible, we need an onload
+    handler for each image in order to know when they have loaded, so that we
+    can remove the placeholder.
+  **/
   render() {
     return (
       <div className={`movie-item ${this.state.imageLoaded ? "loaded" : ""}`}>

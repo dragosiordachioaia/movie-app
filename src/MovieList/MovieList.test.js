@@ -11,7 +11,7 @@ beforeEach(() => {
   instance = component.getInstance();
 });
 
-xit("renders correctly when no movies", () => {
+it("renders correctly when no movies", () => {
   instance.getFilteredList = jest.fn().mockReturnValue([]);
   instance.displayMovies = jest.fn().mockReturnValue("__movies-here__");
   const result = instance.render();

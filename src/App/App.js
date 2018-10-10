@@ -10,6 +10,11 @@ import MovieList from "MovieList/MovieList";
 
 axios.defaults.params = REQUEST_PARAMS;
 
+/**
+  The App component is responsible for maintaining the entire state of the app,
+  which means that all state-changing operations happen here.
+**/
+
 class App extends Component {
   constructor(props) {
     super(props);
