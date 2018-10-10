@@ -2,27 +2,40 @@
 
 .search-bar-container {
   width: calc(100% - #{$sidebar-width});
+  position: relative;
 
   .search-bar {
-    margin-top: 0.4em;
-    margin-left: 2em;
+    left: 0.5em;
+    transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+    width: calc(100% - 3em);
+
+    @media (min-width: $SM) {
+      left: 1em;
+    }
   }
 
-  i {
-    margin-right: 10px;
+  .fa {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
   }
 
   input {
     background-color: transparent;
     border: 0;
-    color: rgba(255, 255, 255, 1);
-    width: calc(100% - 8em);
-    padding: 0.4em;
-    font-size: 0.8em;
+    color: white;
+    width: 100%;
+    font-size: 1em;
     font-weight: 700;
     outline: 0;
     transition: border 300ms;
     border-bottom: 1px solid transparent;
+    position: absolute;
+    left: 1.2em;
+    transform: translateY(-50%);
+    top: 50%;
 
     &:focus {
       border-bottom: 1px solid rgba(255, 255, 255, 0.7);
@@ -31,6 +44,10 @@
     &::placeholder {
       color: rgba(255, 255, 255, 0.6);
       font-weight: 700;
+    }
+
+    @media (min-width: $SM) {
+      left: 1.6em;
     }
   }
 }

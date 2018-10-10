@@ -32,7 +32,7 @@ export default class RangeSlider extends Component {
     this.setState({ mouseDown: false });
   }
   onTouchEnd(e) {
-    this.setState({ mouseDown: false });
+    this.setState({ touchStart: false });
   }
 
   onMouseMove(e) {
