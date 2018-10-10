@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders when checked via props 1`] = `
+<div
+  className="checkbox  checked"
+  onClick={[Function]}
+>
+  <div
+    className="checkbox-inside"
+    onKeyDown={[Function]}
+    tabIndex={0}
+  >
+    <i
+      className="fa fa-check"
+    />
+  </div>
+  <label />
+</div>
+`;
+
+exports[`renders when unchecked via props 1`] = `
+<div
+  className="checkbox "
+  onClick={[Function]}
+>
+  <div
+    className="checkbox-inside"
+    onKeyDown={[Function]}
+    tabIndex={0}
+  >
+    <i
+      className="fa fa-check"
+    />
+  </div>
+  <label />
+</div>
+`;
+
+exports[`renders without crashing 1`] = `
+<div
+  className="checkbox "
+  onClick={[Function]}
+>
+  <div
+    className="checkbox-inside"
+    onKeyDown={[Function]}
+    tabIndex={0}
+  >
+    <i
+      className="fa fa-check"
+    />
+  </div>
+  <label />
+</div>
+`;
