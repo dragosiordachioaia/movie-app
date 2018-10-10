@@ -60,17 +60,23 @@ export default class RangeSlider extends Component {
   }
 
   onTouchMove(e) {
-    // TODO: implement touch events
+    if (!this.state.touchStart) {
+      return;
+    }
+    let axisElement = this.axisRef.current;
+    let axisWidth = axisElement.offsetWidth;
+    let axisLeft = axisElement.getBoundingClientRect().left;
+    let position = Math.round(e.changedTouches[0].pageX - axisLeft - 5);
+    position = Math.min(axisWidth, Math.max(position, 0));
+    let percentage = position / axisWidth;
+    this.callOnChange(percentage);
   }
 
   render() {
     let cursorPosition =
       (this.props.value / (this.props.max - this.props.min)) * 100;
     return (
-      <div
-        className="range-slider"
-        // onMouseLeave={e => this.setState({ mouseDown: false })}
-      >
+      <div className="range-slider">
         <div
           className="cursor"
           style={{ left: `${cursorPosition}%` }}
