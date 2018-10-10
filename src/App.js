@@ -79,6 +79,10 @@ class App extends Component {
             onMinRatingChange={newMinRating => {
               this.setState({ minRating: newMinRating });
             }}
+            onExpand={() =>
+              this.setState({ sidebarExpanded: !this.state.sidebarExpanded })
+            }
+            expanded={this.state.sidebarExpanded}
           />
           <MovieList
             movies={this.state.movies}
@@ -87,14 +91,6 @@ class App extends Component {
             minRating={this.state.minRating}
             nameFilter={this.state.nameFilter}
           />
-          <button
-            className="expand"
-            onClick={() =>
-              this.setState({ sidebarExpanded: !this.state.sidebarExpanded })
-            }
-          >
-            <i className="fa fa-chevron-down" />
-          </button>
         </div>
       </div>
     );

@@ -6,7 +6,7 @@
   color: #eee;
   padding-left: 1em;
   padding-right: 1em;
-  overflow: auto;
+  overflow: hidden;
   height: $sidebar-height;
   width: 100%;
   position: relative;
@@ -19,8 +19,35 @@
     width: $sidebar-width;
   }
 
+  .inner-container {
+    height: calc(100% - 2em);
+    overflow: auto;
+  }
+
   p {
     font-weight: 700;
     font-size: 0.9em;
+  }
+
+  button.expand {
+    position: absolute;
+    bottom: 0em;
+    color: white;
+    background-color: transparent;
+    border: 0;
+    transform: translateX(-50%);
+    left: 50%;
+    outline: 0;
+    padding: 0.7em;
+
+    @media (min-width: $SM) {
+      display: none;
+    }
+
+    .fa {
+      font-size: 1.2rem;
+      position: relative;
+      top: -0.1em;
+    }
   }
 }

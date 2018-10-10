@@ -38,43 +38,12 @@ input {
     }
   }
 
-  button.expand {
-    position: fixed;
-    top: calc(#{$sidebar-height} + #{$header-height} - 1rem);
-    color: white;
-    background-color: $color-primary-alt;
-    border: 0;
-    transform: translateX(-50%);
-    left: 50%;
-    z-index: 10;
-    transition: top 500ms;
-    transition-timing-function: ease-in-out;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    outline: 0;
-    height: 2rem;
-    width: 3rem;
-
-    @media (min-width: $SM) {
-      display: none;
-    }
-
-    .fa {
-      font-size: 1.2rem;
-      position: relative;
-      top: -0.1em;
-    }
-  }
-
   &.sidebar-expanded {
     .sidebar {
       height: 50vh;
     }
     .movie-list-container {
       height: 50vh;
-    }
-    button.expand {
-      top: calc(50vh + #{$header-height} - 1.5rem);
     }
   }
 }

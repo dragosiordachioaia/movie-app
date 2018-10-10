@@ -9,14 +9,21 @@ export default class Sidebar extends Component {
   render() {
     return (
       <div className="sidebar">
-        <RatingFilter
-          minRating={this.props.minRating}
-          onChange={this.props.onMinRatingChange}
-        />
-        <Genres
-          genres={this.props.genres}
-          onGenreCheck={this.props.onGenreCheck}
-        />
+        <div class="inner-container">
+          <RatingFilter
+            minRating={this.props.minRating}
+            onChange={this.props.onMinRatingChange}
+          />
+          <Genres
+            genres={this.props.genres}
+            onGenreCheck={this.props.onGenreCheck}
+          />
+        </div>
+        <button className="expand" onClick={this.props.onExpand}>
+          <i
+            className={`fa fa-chevron-${this.props.expanded ? "up" : "down"}`}
+          />
+        </button>
       </div>
     );
   }
