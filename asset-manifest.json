@@ -1,14 +1,14 @@
 {
-  "main.css": "/movie-app/static/css/main.25e57724.chunk.css",
-  "main.js": "/movie-app/static/js/main.88387cee.chunk.js",
-  "main.js.map": "/movie-app/static/js/main.88387cee.chunk.js.map",
+  "main.css": "/movie-app/static/css/main.82381744.chunk.css",
+  "main.js": "/movie-app/static/js/main.45282ad1.chunk.js",
+  "main.js.map": "/movie-app/static/js/main.45282ad1.chunk.js.map",
   "static/js/1.d182e2c6.chunk.js": "/movie-app/static/js/1.d182e2c6.chunk.js",
   "static/js/1.d182e2c6.chunk.js.map": "/movie-app/static/js/1.d182e2c6.chunk.js.map",
   "runtime~main.js": "/movie-app/static/js/runtime~main.2a4a2700.js",
   "runtime~main.js.map": "/movie-app/static/js/runtime~main.2a4a2700.js.map",
-  "static/css/main.25e57724.chunk.css.map": "/movie-app/static/css/main.25e57724.chunk.css.map",
-  "static/media/App.scss": "/movie-app/static/media/futura_light.98d2f973.ttf",
+  "static/css/main.82381744.chunk.css.map": "/movie-app/static/css/main.82381744.chunk.css.map",
+  "static/media/App.scss": "/movie-app/static/media/futura_heavy.3ea9695e.ttf",
   "index.html": "/movie-app/index.html",
-  "precache-manifest.9473d2fdef28a40f4e21a0ddf07ac55d.js": "/movie-app/precache-manifest.9473d2fdef28a40f4e21a0ddf07ac55d.js",
+  "precache-manifest.dee66515832b9c2dc7ab3578481810ab.js": "/movie-app/precache-manifest.dee66515832b9c2dc7ab3578481810ab.js",
   "service-worker.js": "/movie-app/service-worker.js"
 }
