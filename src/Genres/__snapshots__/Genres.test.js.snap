@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the right number of genre items 1`] = `
+<div>
+  <p>
+    Genres:
+  </p>
+  <ul
+    className="genres-filter"
+  >
+    <GenreItem
+      id={1}
+    />
+    <GenreItem
+      id={2}
+    />
+    <GenreItem
+      id={3}
+    />
+  </ul>
+</div>
+`;
+
+exports[`renders without crashing 1`] = `
+<div>
+  <p>
+    Genres:
+  </p>
+  <ul
+    className="genres-filter"
+  />
+</div>
+`;

@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
 import Checkbox from "./Checkbox";
 
-// jest.mock("Header/Header", () => "Header");
-
 let component;
 let instance;
 
