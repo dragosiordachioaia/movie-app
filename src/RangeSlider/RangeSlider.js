@@ -42,7 +42,7 @@ export default class RangeSlider extends Component {
     let axisElement = this.axisRef.current;
     let axisWidth = axisElement.offsetWidth;
     let axisLeft = axisElement.getBoundingClientRect().left;
-    let position = Math.round(e.screenX - axisLeft - 5);
+    let position = Math.round(e.screenX - axisLeft);
     position = Math.min(axisWidth, Math.max(position, 0));
     let percentage = position / axisWidth;
     this.callOnChange(percentage);
@@ -66,7 +66,7 @@ export default class RangeSlider extends Component {
     let axisElement = this.axisRef.current;
     let axisWidth = axisElement.offsetWidth;
     let axisLeft = axisElement.getBoundingClientRect().left;
-    let position = Math.round(e.changedTouches[0].pageX - axisLeft - 5);
+    let position = Math.round(e.changedTouches[0].pageX - axisLeft);
     position = Math.min(axisWidth, Math.max(position, 0));
     let percentage = position / axisWidth;
     this.callOnChange(percentage);

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="range-slider"
+>
+  <div
+    className="cursor"
+    onMouseDown={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "left": "30%",
+      }
+    }
+  />
+  <div
+    className="tooltip"
+    style={
+      Object {
+        "left": "30%",
+      }
+    }
+  >
+    3
+  </div>
+  <div
+    className="axis"
+  />
+  <div
+    className="axis-highlight"
+    style={
+      Object {
+        "width": "30%",
+      }
+    }
+  />
+  <label
+    className="min"
+  >
+    0
+  </label>
+  <label
+    className="max"
+  >
+    10
+  </label>
+</div>
+`;
