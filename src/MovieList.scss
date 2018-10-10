@@ -3,9 +3,12 @@
 .movie-list-container {
   background-color: #232b31;
   overflow: auto;
-  padding: 1em 0.25em;
-  height: calc(100vh - #{$header-height} + #{$sidebar-height});
+  padding: 2em 0.25em 1em;
+  height: calc(100vh - #{$header-height} - #{$sidebar-height});
   width: 100%;
+  transition: height 500ms;
+  transition-timing-function: ease-in-out;
+  position: relative;
 
   @media (min-width: $SM) {
     height: 100%;

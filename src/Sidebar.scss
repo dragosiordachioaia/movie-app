@@ -9,6 +9,9 @@
   overflow: auto;
   height: $sidebar-height;
   width: 100%;
+  position: relative;
+  transition: height 500ms;
+  transition-timing-function: ease-in-out;
 
   @media (min-width: $SM) {
     height: 100%;

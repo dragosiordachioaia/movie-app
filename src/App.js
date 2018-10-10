@@ -19,6 +19,7 @@ class App extends Component {
       config: null,
       minRating: 3,
       nameFilter: "",
+      sidebarExpanded: false,
     };
 
     this.fetchData = this.fetchData.bind(this);
@@ -60,7 +61,11 @@ class App extends Component {
     }
 
     return (
-      <div className="app">
+      <div
+        className={`app ${
+          this.state.sidebarExpanded ? "sidebar-expanded" : ""
+        }`}
+      >
         <Header
           onNameFilterChange={newValue =>
             this.setState({ nameFilter: newValue })
@@ -82,6 +87,14 @@ class App extends Component {
             minRating={this.state.minRating}
             nameFilter={this.state.nameFilter}
           />
+          <button
+            className="expand"
+            onClick={() =>
+              this.setState({ sidebarExpanded: !this.state.sidebarExpanded })
+            }
+          >
+            <i className="fa fa-chevron-down" />
+          </button>
         </div>
       </div>
     );

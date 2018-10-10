@@ -8,7 +8,7 @@ export default class RatingFilter extends Component {
   render() {
     return (
       <div className="rating-filter">
-        <p>Minimum rating:</p>
+        <p className="label" />
         <RangeSlider
           min={0}
           max={10}
