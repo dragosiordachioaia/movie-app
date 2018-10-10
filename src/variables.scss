@@ -1,3 +1,13 @@
+// fonts
+$font-family: "Futura", sans-serif;
+
+// screen breakpoints
+$XS: 400px;
+$SM: 600px;
+$MD: 768px;
+$LG: 1200px;
+$XL: 1600px;
+
 // colors
 $color-primary: #232b31;
 $color-primary-alt: #181c1f;
@@ -7,9 +17,6 @@ $color-accent-primary: #ffb108;
 $color-accent-primary-alt: #f83744;
 $color-accent-secondary: #95bcd5;
 
-// sizes
+// element sizes
 $sidebar-width: 10em;
 $header-height: 2.5em;
-
-// fonts
-$font-family: "Futura", sans-serif;
