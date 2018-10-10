@@ -6,11 +6,35 @@
   height: $header-height;
   display: flex;
   flex-direction: row;
+  margin-top: -$header-height;
+
+  animation-name: slide-down;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+  opacity: 0;
+
+  @keyframes slide-down {
+    from {
+      margin-top: -$header-height;
+      opacity: 0;
+    }
+    to {
+      margin-top: 0;
+      opacity: 1;
+    }
+  }
 
   .logo-container {
-    padding-left: 50px;
+    text-align: center;
     box-sizing: border-box;
     width: $sidebar-width;
     background-color: $color-secondary-alt;
+
+    img {
+      margin-top: 0.4em;
+      height: 1.6em;
+    }
   }
 }

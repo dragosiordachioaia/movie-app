@@ -18,6 +18,7 @@ class App extends Component {
       movies: null,
       config: null,
       minRating: 3,
+      nameFilter: "",
     };
 
     this.fetchData = this.fetchData.bind(this);
@@ -60,7 +61,11 @@ class App extends Component {
 
     return (
       <div className="app">
-        <Header />
+        <Header
+          onNameFilterChange={newValue =>
+            this.setState({ nameFilter: newValue })
+          }
+        />
         <div className="main-content">
           <Sidebar
             genres={this.state.genres}
@@ -75,6 +80,7 @@ class App extends Component {
             config={this.state.config}
             genres={this.state.genres}
             minRating={this.state.minRating}
+            nameFilter={this.state.nameFilter}
           />
         </div>
       </div>

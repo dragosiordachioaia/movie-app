@@ -11,10 +11,10 @@ export default class Header extends Component {
     return (
       <div className="header">
         <div className="logo-container">
-          <p>Logo</p>
+          <img src="./logo.png" alt="logo" />
         </div>
         <div className="search-bar-container">
-          <SearchBar />
+          <SearchBar onChange={this.props.onNameFilterChange} />
         </div>
       </div>
     );

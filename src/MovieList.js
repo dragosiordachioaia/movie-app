@@ -31,9 +31,15 @@ export default class MovieList extends Component {
     return this.props.movies.filter(movieData => {
       let ratingIsOk = movieData.vote_average >= this.props.minRating;
       let genreIsOk = true;
+      let nameIsOk = true;
       let selectedGenres = this.props.genres.filter(
         genreData => genreData.checked
       );
+      if (this.props.nameFilter.length > 0) {
+        nameIsOk = movieData.title
+          .toLowerCase()
+          .includes(this.props.nameFilter.toLowerCase());
+      }
       if (selectedGenres.length > 0) {
         selectedGenres.forEach(({ id }) => {
           if (!movieData.genre_ids.includes(id)) {
@@ -41,7 +47,7 @@ export default class MovieList extends Component {
           }
         });
       }
-      return genreIsOk && ratingIsOk;
+      return genreIsOk && ratingIsOk && nameIsOk;
     });
   }
 

@@ -6,6 +6,16 @@ export default class SearchBar extends Component {
   displayStuff() {}
 
   render() {
-    return <div> SearchBar </div>;
+    return (
+      <div className="search-bar">
+        <i className="fa fa-search" />
+        <input
+          type="text"
+          placeholder="Filter by name"
+          value={this.props.filterValue}
+          onChange={e => this.props.onChange(e.target.value)}
+        />
+      </div>
+    );
   }
 }
