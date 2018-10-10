@@ -36,9 +36,11 @@
     left: 1.2em;
     transform: translateY(-50%);
     top: 50%;
+    border-radius: 0;
 
     &:focus {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+      border: 0;
+      // border-bottom: 1px solid rgba(255, 255, 255, 0.7);
     }
 
     &::placeholder {
