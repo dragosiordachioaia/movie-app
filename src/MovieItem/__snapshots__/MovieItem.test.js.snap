@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when loaded 1`] = `
+<div
+  className="movie-item loaded"
+>
+  <span
+    className="rating"
+  >
+    10
+  </span>
+  <img
+    alt="poster-Awesome new film"
+    className="poster-image"
+    onLoad={[Function]}
+    src="https://server.com//path_to_image.jpg"
+  />
+  <div
+    className="info"
+  >
+    <p
+      className="title"
+    >
+      Awesome new film
+    </p>
+    <p
+      className="genres"
+    >
+      Action
+    </p>
+  </div>
+</div>
+`;
+
+exports[`renders correctly when not loaded 1`] = `
+<div
+  className="movie-item "
+>
+  <span
+    className="rating"
+  >
+    10
+  </span>
+  <img
+    alt="poster-Awesome new film"
+    className="poster-image"
+    onLoad={[Function]}
+    src="https://server.com//path_to_image.jpg"
+  />
+  <svg
+    className="poster-image-placeholder"
+    version="1.1"
+    viewBox="0 0 500 750"
+  >
+    <g
+      fill="none"
+      fillRule="evenodd"
+      id="Page-1"
+      stroke="none"
+      strokeWidth="1"
+    >
+      <g
+        fill="#353D42"
+        fillRule="nonzero"
+        id="Artboard"
+      >
+        <rect
+          height="750"
+          id="Rectangle"
+          width="500"
+          x="0"
+          y="0"
+        />
+      </g>
+    </g>
+  </svg>
+  <div
+    className="info"
+  >
+    <p
+      className="title"
+    >
+      Awesome new film
+    </p>
+    <p
+      className="genres"
+    >
+      Action
+    </p>
+  </div>
+</div>
+`;

@@ -11,15 +11,45 @@ export default class MovieItem extends Component {
       imageLoaded: false,
     };
     this.displayGenres = this.displayGenres.bind(this);
+    this.displayPlaceholder = this.displayPlaceholder.bind(this);
   }
 
   displayGenres() {
     return this.props.genres
       .filter(genreData => {
-        return this.props.data.genre_ids.includes(genreData.id);
+        return (
+          !this.props.data.genre_ids ||
+          this.props.data.genre_ids.includes(genreData.id)
+        );
       })
       .map(genreData => genreData.name)
       .join(", ");
+  }
+
+  displayPlaceholder() {
+    if (this.state.imageLoaded) {
+      return null;
+    }
+
+    return (
+      <svg
+        className="poster-image-placeholder"
+        viewBox="0 0 500 750"
+        version="1.1"
+      >
+        <g
+          id="Page-1"
+          stroke="none"
+          strokeWidth="1"
+          fill="none"
+          fillRule="evenodd"
+        >
+          <g id="Artboard" fill="#353D42" fillRule="nonzero">
+            <rect id="Rectangle" x="0" y="0" width="500" height="750" />
+          </g>
+        </g>
+      </svg>
+    );
   }
 
   render() {
@@ -33,23 +63,7 @@ export default class MovieItem extends Component {
           onLoad={() => this.setState({ imageLoaded: true })}
         />
 
-        <svg
-          className="poster-image-placeholder"
-          viewBox="0 0 500 750"
-          version="1.1"
-        >
-          <g
-            id="Page-1"
-            stroke="none"
-            strokeWidth="1"
-            fill="none"
-            fillRule="evenodd"
-          >
-            <g id="Artboard" fill="#353D42" fillRule="nonzero">
-              <rect id="Rectangle" x="0" y="0" width="500" height="750" />
-            </g>
-          </g>
-        </svg>
+        {this.displayPlaceholder()}
         <div className="info">
           <p className="title">{this.props.data.title}</p>
           <p className="genres">{this.displayGenres()}</p>
