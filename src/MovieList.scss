@@ -7,11 +7,12 @@
   width: calc(100% - #{$sidebar-width});
   overflow: auto;
 
-  .title {
+  & > .title {
     color: #fff;
     margin-top: 0;
     font-weight: 100;
     margin-left: 1rem;
+    letter-spacing: 1px;
   }
 
   .movie-list {

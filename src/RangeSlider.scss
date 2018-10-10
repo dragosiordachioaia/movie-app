@@ -47,18 +47,26 @@
     padding-top: 0.2em;
     padding-bottom: 0.2em;
     transform: translate(-50%, -50%);
-    top: -1.2em;
+    top: -1.5em;
     position: absolute;
     transition: left 250ms;
   }
 
+  .min,
+  .max,
+  .tooltip {
+    user-select: none;
+    font-weight: 700;
+    font-size: 0.8em;
+  }
+
   .min {
     float: left;
-    user-select: none;
+    margin-top: -0.4em;
   }
 
   .max {
     float: right;
-    user-select: none;
+    margin-top: -0.4em;
   }
 }

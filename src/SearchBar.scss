@@ -4,7 +4,7 @@
   width: calc(100% - #{$sidebar-width});
 
   .search-bar {
-    margin-top: 0.6em;
+    margin-top: 0.4em;
     margin-left: 2em;
   }
 
@@ -15,7 +15,7 @@
   input {
     background-color: transparent;
     border: 0;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 1);
     width: calc(100% - 8em);
     padding: 0.4em;
     font-size: 0.8em;
@@ -29,8 +29,8 @@
     }
 
     &::placeholder {
-      color: rgba(255, 255, 255, 0.7);
-      font-weight: 400;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 700;
     }
   }
 }

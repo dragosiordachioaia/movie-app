@@ -41,11 +41,11 @@ export default class MovieItem extends Component {
           <g
             id="Page-1"
             stroke="none"
-            stroke-width="1"
+            strokeWidth="1"
             fill="none"
-            fill-rule="evenodd"
+            fillRule="evenodd"
           >
-            <g id="Artboard" fill="#353D42" fill-rule="nonzero">
+            <g id="Artboard" fill="#353D42" fillRule="nonzero">
               <rect id="Rectangle" x="0" y="0" width="500" height="750" />
             </g>
           </g>
