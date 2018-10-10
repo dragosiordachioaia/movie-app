@@ -1,14 +1,19 @@
 @import "./variables";
 
 .sidebar {
-  height: 100%;
-  width: $sidebar-width;
   box-sizing: border-box;
   background-color: $color-primary-alt;
   color: #eee;
   padding-left: 1em;
   padding-right: 1em;
   overflow: auto;
+  height: $sidebar-height;
+  width: 100%;
+
+  @media (min-width: $SM) {
+    height: 100%;
+    width: $sidebar-width;
+  }
 
   p {
     font-weight: 700;

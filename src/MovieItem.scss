@@ -9,11 +9,11 @@
   transition-timing-function: ease-in-out;
 
   @media (min-width: $SM) {
-    width: calc(100% / 3);
+    width: calc(100% / 2);
   }
 
   @media (min-width: $MD) {
-    width: calc(100% / 4);
+    width: calc(100% / 3);
   }
 
   @media (min-width: $LG) {

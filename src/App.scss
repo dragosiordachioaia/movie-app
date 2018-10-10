@@ -31,6 +31,10 @@ input {
   .main-content {
     display: flex;
     height: calc(100vh - #{$header-height});
-    flex-direction: row;
+    flex-direction: column;
+
+    @media (min-width: $SM) {
+      flex-direction: row;
+    }
   }
 }
