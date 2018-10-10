@@ -8,23 +8,21 @@ export default class MovieList extends Component {
   constructor(props) {
     super(props);
 
-    this.displayList = this.displayList.bind(this);
+    this.displayMovies = this.displayMovies.bind(this);
     this.getFilteredList = this.getFilteredList.bind(this);
   }
 
-  displayList() {
-    return this.getFilteredList()
-      .sort((a, b) => b.popularity - a.popularity)
-      .map(movieData => {
-        return (
-          <MovieItem
-            key={movieData.id}
-            data={movieData}
-            config={this.props.config}
-            genres={this.props.genres}
-          />
-        );
-      });
+  displayMovies(list) {
+    return list.sort((a, b) => b.popularity - a.popularity).map(movieData => {
+      return (
+        <MovieItem
+          key={movieData.id}
+          data={movieData}
+          config={this.props.config}
+          genres={this.props.genres}
+        />
+      );
+    });
   }
 
   getFilteredList() {
@@ -52,10 +50,15 @@ export default class MovieList extends Component {
   }
 
   render() {
+    let filteredList = this.getFilteredList();
+    let title = "Films showing right now";
+    if (filteredList.length === 0) {
+      title = "No movies match your search";
+    }
     return (
       <div className="movie-list-container">
-        <h1 className="title">Films showing right now</h1>
-        <div className="movie-list">{this.displayList()}</div>
+        <h1 className="title">{title}</h1>
+        <div className="movie-list">{this.displayMovies(filteredList)}</div>
       </div>
     );
   }
