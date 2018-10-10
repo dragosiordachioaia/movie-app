@@ -3,7 +3,7 @@
 .movie-list-container {
   background-color: #232b31;
   overflow: auto;
-  padding: 2em 0.25em 1em;
+  padding: 1em 0.25em;
   height: calc(100vh - #{$header-height} - #{$sidebar-height});
   width: 100%;
   transition: height 500ms;
@@ -26,8 +26,16 @@
     margin-top: 0;
     font-weight: 100;
     margin-left: 0.5rem;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 1.3em;
+
+    @media (min-width: $SM) {
+      font-weight: 400;
+      font-size: 1.9em;
+      margin-bottom: 1.2em;
+    }
   }
 
   .movie-list {
