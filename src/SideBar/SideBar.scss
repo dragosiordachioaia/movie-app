@@ -4,8 +4,7 @@
   box-sizing: border-box;
   background-color: $color-primary-alt;
   color: #eee;
-  padding-left: 1em;
-  padding-right: 1em;
+
   overflow: hidden;
   height: $sidebar-height;
   width: 100%;
@@ -22,6 +21,11 @@
   .inner-container {
     height: calc(100% - 2em);
     overflow: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    @media (min-width: $SM) {
+      height: 100%;
+    }
   }
 
   p {
