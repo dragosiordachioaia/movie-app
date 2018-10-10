@@ -7,7 +7,9 @@ import { getImagePath } from "./utils";
 export default class MovieItem extends Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      imageLoaded: false,
+    };
     this.displayGenres = this.displayGenres.bind(this);
   }
 
@@ -22,12 +24,32 @@ export default class MovieItem extends Component {
 
   render() {
     return (
-      <div className="movie-item">
+      <div className={`movie-item ${this.state.imageLoaded ? "loaded" : ""}`}>
         <span className="rating">{this.props.data.vote_average}</span>
         <img
+          className="poster-image"
           src={getImagePath(this.props.data.poster_path, this.props.config)}
           alt={`poster-${this.props.data.title}`}
+          onLoad={() => this.setState({ imageLoaded: true })}
         />
+
+        <svg
+          className="poster-image-placeholder"
+          viewBox="0 0 500 750"
+          version="1.1"
+        >
+          <g
+            id="Page-1"
+            stroke="none"
+            stroke-width="1"
+            fill="none"
+            fill-rule="evenodd"
+          >
+            <g id="Artboard" fill="#353D42" fill-rule="nonzero">
+              <rect id="Rectangle" x="0" y="0" width="500" height="750" />
+            </g>
+          </g>
+        </svg>
         <div className="info">
           <p className="title">{this.props.data.title}</p>
           <p className="genres">{this.displayGenres()}</p>

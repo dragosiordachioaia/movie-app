@@ -14,7 +14,7 @@
 
   @for $i from 1 through 10 {
     &:nth-child(#{$i}) {
-      animation-delay: $i * 0.05s;
+      animation-delay: $i * 0.15s + 0.2s;
     }
   }
 
@@ -29,7 +29,24 @@
     }
   }
 
-  img {
+  .poster-image {
+    display: none;
+  }
+  .poster-image-placeholder {
+    display: block;
+  }
+
+  &.loaded {
+    .poster-image {
+      display: block;
+    }
+    .poster-image-placeholder {
+      display: none;
+    }
+  }
+
+  img,
+  svg {
     max-width: 100%;
     box-shadow: 0px 7px 40px rgba(0, 0, 0, 0.3);
   }
