@@ -9,6 +9,7 @@
   transition: height 500ms;
   transition-timing-function: ease-in-out;
   position: relative;
+  -webkit-overflow-scrolling: touch;
 
   @media (min-width: $SM) {
     height: 100%;
