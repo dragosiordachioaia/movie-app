@@ -1,9 +1,4 @@
-# Movie App
-------------------
-
-Desktop                          |    Mobile
-:-------------------------:|:-------------------------:
- !["Desktop image](desktop.png)  |   !["Desktop image](mobile.png)
+!["Desktop image](desktop_2.png)
 
 
 ## Overview
