@@ -37,6 +37,9 @@ function isInMercurialRepository() {
   }
 }
 
+argv.push("--coverage");
+argv.push("--collectCoverageFrom=src/**/*.js");
+
 // Watch unless on CI, in coverage mode, or explicitly running all tests
 if (
   !process.env.CI &&
@@ -47,7 +50,5 @@ if (
   const hasSourceControl = isInGitRepository() || isInMercurialRepository();
   argv.push(hasSourceControl ? "--watch" : "--watchAll");
 }
-
-// argv.push("-u");
 
 jest.run(argv);
