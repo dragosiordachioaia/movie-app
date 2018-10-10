@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`correctly renders the expanded state 1`] = `
+<div
+  className="app sidebar-expanded"
+>
+  <Header
+    onNameFilterChange={[Function]}
+  />
+  <div
+    className="main-content"
+  >
+    <SideBar
+      expanded={true}
+      genres={Array []}
+      onExpand={[Function]}
+      onGenreCheck={[Function]}
+      onMinRatingChange={[Function]}
+    />
+    <MovieList
+      config={Object {}}
+      genres={Array []}
+      movies={Array []}
+    />
+  </div>
+</div>
+`;
+
+exports[`correctly renders the non-expanded state 1`] = `
+<div
+  className="app "
+>
+  <Header
+    onNameFilterChange={[Function]}
+  />
+  <div
+    className="main-content"
+  >
+    <SideBar
+      expanded={false}
+      genres={Array []}
+      onExpand={[Function]}
+      onGenreCheck={[Function]}
+      onMinRatingChange={[Function]}
+    />
+    <MovieList
+      config={Object {}}
+      genres={Array []}
+      movies={Array []}
+    />
+  </div>
+</div>
+`;
+
+exports[`renders correctly if loaded 1`] = `
+<div
+  className="app "
+>
+  <Header
+    onNameFilterChange={[Function]}
+  />
+  <div
+    className="main-content"
+  >
+    <SideBar
+      genres={Array []}
+      onExpand={[Function]}
+      onGenreCheck={[Function]}
+      onMinRatingChange={[Function]}
+    />
+    <MovieList
+      config={Object {}}
+      genres={Array []}
+      movies={Array []}
+    />
+  </div>
+</div>
+`;
+
+exports[`renders loading state initially 1`] = `
+<p>
+  Loading...
+</p>
+`;

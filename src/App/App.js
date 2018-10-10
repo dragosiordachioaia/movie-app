@@ -24,6 +24,9 @@ class App extends Component {
 
     this.fetchData = this.fetchData.bind(this);
     this.onGenreCheck = this.onGenreCheck.bind(this);
+    this.onToggleSidebar = this.onToggleSidebar.bind(this);
+    this.onUpdateNameFilter = this.onUpdateNameFilter.bind(this);
+    this.onMinRatingChange = this.onMinRatingChange.bind(this);
   }
 
   componentDidMount() {
@@ -43,16 +46,25 @@ class App extends Component {
   }
 
   onGenreCheck(data) {
-    console.log("onGenreCheck() data = ", data);
-
     let newGenres = JSON.parse(JSON.stringify(this.state.genres));
     newGenres.forEach(genreData => {
       if (genreData.id === data.id) {
-        console.log("found:", genreData);
         genreData.checked = !genreData.checked;
       }
     });
     this.setState({ genres: newGenres });
+  }
+
+  onToggleSidebar() {
+    this.setState({ sidebarExpanded: !this.state.sidebarExpanded });
+  }
+
+  onUpdateNameFilter(newValue) {
+    this.setState({ nameFilter: newValue });
+  }
+
+  onMinRatingChange(newMinRating) {
+    this.setState({ minRating: newMinRating });
   }
 
   render() {
@@ -66,22 +78,14 @@ class App extends Component {
           this.state.sidebarExpanded ? "sidebar-expanded" : ""
         }`}
       >
-        <Header
-          onNameFilterChange={newValue =>
-            this.setState({ nameFilter: newValue })
-          }
-        />
+        <Header onNameFilterChange={this.onUpdateNameFilter} />
         <div className="main-content">
           <SideBar
             genres={this.state.genres}
             onGenreCheck={this.onGenreCheck}
             minRating={this.state.minRating}
-            onMinRatingChange={newMinRating => {
-              this.setState({ minRating: newMinRating });
-            }}
-            onExpand={() =>
-              this.setState({ sidebarExpanded: !this.state.sidebarExpanded })
-            }
+            onMinRatingChange={this.onMinRatingChange}
+            onExpand={this.onToggleSidebar}
             expanded={this.state.sidebarExpanded}
           />
           <MovieList

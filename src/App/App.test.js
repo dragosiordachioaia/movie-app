@@ -1,53 +1,101 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import renderer from "react-test-renderer";
 import App from "./App";
 
-it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+jest.mock("Header/Header", () => "Header");
+jest.mock("SideBar/SideBar", () => "SideBar");
+jest.mock("MovieList/MovieList", () => "MovieList");
+
+let component;
+let instance;
+
+beforeEach(() => {
+  component = renderer.create(<App />);
+  instance = component.getInstance();
 });
 
-// import React from 'react';
-// import renderer from 'react-test-renderer';
-//
-// import { CompactInsuranceOrder } from 'new_checkout/components/bundle_parts/compact_insurance_order';
-//
-// let component;
-//
-// describe('CompactInsuranceOrder component', () => {
-//   it('renders correctly', () => {
-//     const props = {
-//       order: {
-//         event: {
-//           content: {
-//             full_terms: {
-//               value_html: 'terms here',
-//             },
-//           },
-//         },
-//       },
-//     };
-//     const component = renderer.create(<CompactInsuranceOrder {...props} />);
-//     const tree = component.toJSON();
-//     expect(tree).toMatchSnapshot();
-//   });
-//   it('calls analytics on T & C click', () => {
-//     const props = {
-//       order: {
-//         event: {
-//           content: {
-//             full_terms: {
-//               value_html: 'terms here',
-//             },
-//           },
-//         },
-//       },
-//       sendAnalyticsEvent: jest.fn(),
-//     };
-//     const component = renderer.create(<CompactInsuranceOrder {...props} />);
-//     const instance = component.getInstance();
-//     instance.onInsuranceTAndCClick();
-//     expect(props.sendAnalyticsEvent).toBeCalled();
-//   });
-// });
+it("renders loading state initially", () => {
+  const result = instance.render();
+  expect(result).toMatchSnapshot();
+});
+
+it("renders correctly if loaded", () => {
+  instance.state = {
+    config: {},
+    movies: [],
+    genres: [],
+  };
+  const result = instance.render();
+  expect(result).toMatchSnapshot();
+});
+
+it("toggles a genre on", () => {
+  instance.state = {
+    genres: [{ id: 4 }],
+  };
+  instance.onGenreCheck({ id: 4 });
+  expect(instance.state.genres[0].checked).toBe(true);
+});
+
+it("toggles a genre off", () => {
+  instance.state = {
+    genres: [{ id: 4, checked: true }],
+  };
+  instance.onGenreCheck({ id: 4 });
+  expect(instance.state.genres[0].checked).toBe(false);
+});
+
+it("expands the sidebar", () => {
+  instance.state = {
+    sidebarExpanded: false,
+  };
+  instance.onToggleSidebar();
+  expect(instance.state.sidebarExpanded).toBe(true);
+});
+
+it("collapses the sidebar", () => {
+  instance.state = {
+    sidebarExpanded: true,
+  };
+  instance.onToggleSidebar();
+  expect(instance.state.sidebarExpanded).toBe(false);
+});
+
+it("sets the name filter", () => {
+  instance.state = {
+    nameFilter: "old",
+  };
+  instance.onUpdateNameFilter("new");
+  expect(instance.state.nameFilter).toEqual("new");
+});
+
+it("changes the min rating", () => {
+  instance.state = {
+    minRating: 3,
+  };
+  instance.onMinRatingChange(4);
+  expect(instance.state.minRating).toEqual(4);
+});
+
+it("correctly renders the expanded state", () => {
+  instance.state = {
+    config: {},
+    movies: [],
+    genres: [],
+    sidebarExpanded: true,
+  };
+  const result = instance.render();
+  expect(result).toMatchSnapshot();
+});
+
+it("correctly renders the non-expanded state", () => {
+  instance.state = {
+    config: {},
+    movies: [],
+    genres: [],
+    sidebarExpanded: false,
+  };
+  const result = instance.render();
+  expect(result).toMatchSnapshot();
+});
