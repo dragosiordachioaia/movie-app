@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 
-import "./Sidebar.scss";
+import "./SideBar.scss";
 
-import RatingFilter from "./RatingFilter";
-import Genres from "./Genres";
+import RatingFilter from "RatingFilter/RatingFilter";
+import Genres from "Genres/Genres";
 
-export default class Sidebar extends Component {
+export default class SideBar extends Component {
   render() {
     return (
-      <div className="sidebar">
-        <div class="inner-container">
+      <div className="side-bar">
+        <div className="inner-container">
           <RatingFilter
             minRating={this.props.minRating}
             onChange={this.props.onMinRatingChange}

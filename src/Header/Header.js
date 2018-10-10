@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "./Header.scss";
 
-import SearchBar from "./SearchBar";
+import SearchBar from "SearchBar/SearchBar";
 
 export default class Header extends Component {
   displayStuff() {}

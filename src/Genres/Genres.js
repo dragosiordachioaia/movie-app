@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "./Genres.scss";
 
-import GenreItem from "./GenreItem";
+import GenreItem from "GenreItem/GenreItem";
 
 export default class Genres extends Component {
   constructor(props) {

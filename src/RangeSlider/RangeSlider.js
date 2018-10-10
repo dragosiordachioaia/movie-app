@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "./RangeSlider.scss";
 
-import { roundToStep } from "./utils";
+import { roundToStep } from "utils";
 
 export default class RangeSlider extends Component {
   constructor(props) {

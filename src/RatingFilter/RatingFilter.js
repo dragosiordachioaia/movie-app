@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "./RatingFilter.scss";
 
-import RangeSlider from "./RangeSlider";
+import RangeSlider from "RangeSlider/RangeSlider";
 
 export default class RatingFilter extends Component {
   render() {

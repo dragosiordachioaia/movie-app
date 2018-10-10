@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "./MovieList.scss";
 
-import MovieItem from "./MovieItem";
+import MovieItem from "MovieItem/MovieItem";
 
 export default class MovieList extends Component {
   constructor(props) {

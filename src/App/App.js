@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import "./App.scss";
 
 import axios from "axios";
-import { ENDPOINTS, REQUEST_PARAMS } from "./constants";
+import { ENDPOINTS, REQUEST_PARAMS } from "../constants";
 
-import Header from "./Header";
-import Sidebar from "./Sidebar";
-import MovieList from "./MovieList";
+import Header from "Header/Header";
+import SideBar from "SideBar/SideBar";
+import MovieList from "MovieList/MovieList";
 
 axios.defaults.params = REQUEST_PARAMS;
 
@@ -72,7 +72,7 @@ class App extends Component {
           }
         />
         <div className="main-content">
-          <Sidebar
+          <SideBar
             genres={this.state.genres}
             onGenreCheck={this.onGenreCheck}
             minRating={this.state.minRating}

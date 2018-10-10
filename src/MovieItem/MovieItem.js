@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "./MovieItem.scss";
 
-import { getImagePath } from "./utils";
+import { getImagePath } from "utils";
 
 export default class MovieItem extends Component {
   constructor(props) {

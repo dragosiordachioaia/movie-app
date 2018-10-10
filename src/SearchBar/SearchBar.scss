@@ -1,4 +1,4 @@
-@import "variables";
+@import "../variables";
 
 .search-bar-container {
   width: calc(100% - #{$sidebar-width});
