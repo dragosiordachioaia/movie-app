@@ -7,6 +7,14 @@ jest.mock("Header/Header", () => "Header");
 jest.mock("SideBar/SideBar", () => "SideBar");
 jest.mock("MovieList/MovieList", () => "MovieList");
 
+import axios from "axios";
+
+axios.get = () => {
+  return {
+    then: () => {},
+  };
+};
+
 let component;
 let instance;
 
