@@ -2,14 +2,19 @@
 
 .movie-list-container {
   background-color: #232b31;
-  padding: 2em 2em;
   overflow: auto;
+  padding: 1em 0.25em;
   height: calc(100vh - #{$header-height} + #{$sidebar-height});
   width: 100%;
 
   @media (min-width: $SM) {
     height: 100%;
     width: calc(100% - #{$sidebar-width});
+    padding: 1em 0.5em;
+  }
+
+  @media (min-width: $MD) {
+    padding: 2em 0.5em;
   }
 
   & > .title {
