@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`correctly displays and sorts movies 1`] = `
+Array [
+  <MovieItem
+    data={
+      Object {
+        "id": 1,
+        "popularity": 1,
+      }
+    }
+    genres={Array []}
+  />,
+  <MovieItem
+    data={
+      Object {
+        "id": 0,
+        "popularity": 0,
+      }
+    }
+    genres={Array []}
+  />,
+]
+`;
+
+exports[`correctly filters movies 1`] = `
+Array [
+  Object {
+    "genre_ids": Array [
+      0,
+      1,
+    ],
+    "popularity": 2,
+    "title": "Avengers 1",
+    "vote_average": 5,
+  },
+  Object {
+    "genre_ids": Array [
+      0,
+      1,
+    ],
+    "popularity": 4,
+    "title": "Avengers 3",
+    "vote_average": 6,
+  },
+]
+`;
+
+exports[`renders correctly when it has movies 1`] = `
+<div
+  className="movie-list-container"
+>
+  <h1
+    className="title"
+  >
+    Movies showing right now
+  </h1>
+  <div
+    className="movie-list"
+  >
+    __movies-here__
+  </div>
+</div>
+`;
+
+exports[`renders correctly when no movies 1`] = `
+<div
+  className="movie-list-container"
+>
+  <h1
+    className="title"
+  >
+    No movies match your search
+  </h1>
+  <div
+    className="movie-list"
+  >
+    __movies-here__
+  </div>
+</div>
+`;

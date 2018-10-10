@@ -3,9 +3,8 @@ import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
 import MovieItem from "./MovieItem";
 
-// jest.mock("SearchBar/SearchBar", () => "SearchBar");
-
 import * as utils from "utils";
+
 utils.getImagePath = (imageID, config) => {
   return `https://server.com/${imageID}`;
 };
@@ -19,6 +18,7 @@ beforeEach(() => {
 });
 
 it("renders correctly when loaded", () => {
+  instance.displayGenres = jest.fn().mockReturnValue("__genres-here__");
   instance.state = {
     imageLoaded: true,
   };
@@ -45,6 +45,7 @@ it("renders correctly when not loaded", () => {
   instance.state = {
     imageLoaded: false,
   };
+  instance.displayGenres = jest.fn().mockReturnValue("__genres-here__");
   instance.props = {
     data: {
       genre_ids: [4],

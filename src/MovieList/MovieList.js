@@ -51,7 +51,7 @@ export default class MovieList extends Component {
 
   render() {
     let filteredList = this.getFilteredList();
-    let title = "Films showing right now";
+    let title = "Movies showing right now";
     if (filteredList.length === 0) {
       title = "No movies match your search";
     }
